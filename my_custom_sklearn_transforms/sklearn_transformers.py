@@ -17,6 +17,6 @@ class DropColumns(BaseEstimator, TransformerMixin):
         data["PESSIMO_ALUNO"] = data["NOTA_MF"].apply(lambda x: 1 if  x < 3 else 0)
         data["MUITO_BOM_GUYS"] = data["NOTA_MF"].apply(lambda x: 1 if x >= 7 and x <= 12 else 0)
 
-        data = data.dropna(inplace=False)
+        # data = data.dropna(inplace=False)
         # Retornamos um novo dataframe sem as colunas indesejadas
         return data.drop(labels=self.columns, axis='columns')
